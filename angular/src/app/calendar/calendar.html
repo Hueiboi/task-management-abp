@@ -1,0 +1,177 @@
+<div class="calendar-container p-4 bg-white min-vh-100"> 
+  
+  <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+    <div>
+      <h2 class="fs-4 fw-bold text-dark mb-1">
+        <i nz-icon nzType="calendar" class="text-primary me-2"></i> 
+        {{ 'TaskManagement::CalendarSchedule' | abpLocalization }}
+      </h2>
+      <p class="text-muted small mb-0">{{ 'TaskManagement::ManageScheduleDescription' | abpLocalization }}</p>
+    </div>
+
+    <nz-radio-group [(ngModel)]="viewMode" nzButtonStyle="solid">
+      <label nz-radio-button nzValue="month"><i nz-icon nzType="calendar"></i> {{ 'TaskManagement::Month' | abpLocalization }}</label>
+      <label nz-radio-button nzValue="week"><i nz-icon nzType="table"></i> {{ 'TaskManagement::Week' | abpLocalization }}</label>
+      <label nz-radio-button nzValue="list"><i nz-icon nzType="unordered-list"></i> {{ 'TaskManagement::List' | abpLocalization }}</label>
+    </nz-radio-group>
+  </div>
+
+  <nz-card class="border-0 shadow-sm rounded mb-4" [nzBodyStyle]="{'padding': '16px'}">
+    <div class="row align-items-center">
+      <div class="col-md-5 mb-3 mb-md-0">
+        <nz-input-group [nzPrefix]="searchIcon" class="rounded">
+          <input type="text" nz-input [placeholder]="'TaskManagement::SearchPlaceholder' | abpLocalization" [(ngModel)]="searchTerm" (ngModelChange)="applyFilter()" />
+        </nz-input-group>
+        <ng-template #searchIcon><i nz-icon nzType="search" class="text-muted"></i></ng-template>
+      </div>
+      
+      <div class="col-md-7">
+        <div class="d-flex align-items-center gap-3 w-100">
+          <span class="fw-bold small text-muted text-uppercase text-nowrap">{{ 'TaskManagement::Projects' | abpLocalization }}:</span>
+          <nz-select
+            nzMode="multiple"
+            [nzPlaceHolder]="'TaskManagement::SelectProject' | abpLocalization"
+            nzShowSearch
+            nzAllowClear
+            class="w-100 rounded"
+            [(ngModel)]="selectedProjectIds"
+            (ngModelChange)="applyFilter()">
+            <nz-option *ngFor="let p of projects" [nzLabel]="p.name" [nzValue]="p.id"></nz-option>
+          </nz-select>
+        </div>
+      </div>
+    </div>
+  </nz-card>
+
+  <nz-spin [nzSpinning]="loading">
+    
+    <div *ngIf="viewMode === 'month'" class="bg-white rounded shadow-sm border p-2">
+      <nz-calendar [(ngModel)]="selectedDate" (nzPanelChange)="loadCalendarData()">
+        <ul *nzDateCell="let date" class="events m-0 p-0 list-unstyled">
+          <li *ngFor="let item of getTasksForMonth(date)" class="task-item">
+            <nz-badge [nzStatus]="getStatusType(item.status)" [nzText]="item.title"></nz-badge>
+          </li>
+        </ul>
+      </nz-calendar>
+    </div>
+
+    <div *ngIf="viewMode === 'week'" class="bg-white rounded shadow-sm border overflow-hidden">
+      <div class="d-flex justify-content-between align-items-center p-3 border-bottom bg-white">
+        <h5 class="fw-bold mb-0">{{ weekDaysList[0] | date:'dd/MM' }} - {{ weekDaysList[6] | date:'dd/MM/yyyy' }}</h5>
+        <div class="d-flex gap-2">
+          <button nz-button nzType="default" nzSize="small" (click)="navigateWeek('prev')"><i nz-icon nzType="left"></i></button>
+          <button nz-button nzType="default" nzSize="small" (click)="navigateWeek('today')">{{ 'TaskManagement::Today' | abpLocalization }}</button>
+          <button nz-button nzType="default" nzSize="small" (click)="navigateWeek('next')"><i nz-icon nzType="right"></i></button>
+        </div>
+      </div>
+
+      <div class="week-grid border-bottom bg-white"> 
+        <div class="p-2 text-center small fw-bold text-muted border-end">{{ 'TaskManagement::Hour' | abpLocalization }}</div>
+        <div *ngFor="let day of weekDaysList" class="p-2 text-center border-end">
+          <div class="small text-muted text-uppercase">{{ day | date:'EEE' }}</div>
+          <div class="fs-5 fw-bold" [ngClass]="{'text-primary': (day | date:'dd/MM/yyyy') === (selectedDate | date:'dd/MM/yyyy')}">{{ day | date:'dd' }}</div>
+        </div>
+      </div>
+
+      <div class="position-relative overflow-auto" style="max-height: 65vh;">
+        <div class="week-grid position-relative" style="min-width: 800px;">
+          
+          <div class="border-end bg-white">
+            <ng-container *ngFor="let hour of activeHours; let i = index">
+              <div class="time-slot p-2 small text-muted text-end border-bottom"
+                   [ngClass]="{'border-top-jump': i > 0 && activeHours[i] - activeHours[i-1] > 1}">
+                {{ hour.toString().padStart(2, '0') }}:00
+              </div>
+            </ng-container>
+          </div>
+
+          <div *ngFor="let day of weekDaysList" class="position-relative border-end bg-white day-column">
+            <ng-container *ngFor="let hour of activeHours; let i = index">
+              <div class="time-slot border-bottom"
+                   [ngClass]="{'border-top-jump': i > 0 && activeHours[i] - activeHours[i-1] > 1}">
+              </div>
+            </ng-container>
+
+            <div class="position-absolute w-100 h-100 top-0 start-0 p-1 pointer-events-none">
+              <div *ngFor="let group of getGroupsForWeekDay(day)"
+                   class="position-absolute rounded p-1 cursor-pointer shadow-sm border-start border-4 task-block pointer-events-auto"
+                   [ngClass]="{
+                     'task-new': group.tasks[0].status === 0,
+                     'task-inprogress': group.tasks[0].status === 1,
+                     'task-completed': group.tasks[0].status === 2,
+                     'bg-group-card': group.isGroup
+                   }"
+                   [style.top.px]="group.topPx + 2"
+                   [style.height.px]="group.heightPx - 4"
+                   [style.left.px]="2"
+                   [style.right.px]="2"
+                   (click)="openGroupModal(group)">
+                
+                <ng-container *ngIf="!group.isGroup">
+                  <div class="task-title fw-bold text-truncate">{{ group.tasks[0].title }}</div>
+                  <div class="task-subtitle small text-truncate mt-1"><i nz-icon nzType="project"></i> {{ group.tasks[0].assignedUserName }}</div>
+                </ng-container>
+
+                <ng-container *ngIf="group.isGroup">
+                  <div class="task-title fw-bold text-truncate text-primary"><i nz-icon nzType="appstore" class="me-1"></i> {{ 'TaskManagement::TaskGroup' | abpLocalization }}</div>
+                  <div class="task-subtitle small text-truncate mt-1 fw-bold text-dark">{{ group.tasks.length }} {{ 'TaskManagement::OverlappingTasks' | abpLocalization }}</div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="viewMode === 'list'" class="d-flex flex-column gap-3">
+      <div *ngFor="let group of listGroupedTasks" class="bg-white rounded shadow-sm border p-3">
+        <div class="d-flex align-items-center gap-2 mb-3 border-bottom pb-2">
+          <i nz-icon nzType="calendar" class="text-primary fs-5"></i>
+          <h5 class="fw-bold text-dark mb-0">{{ group[0] | date:'dd/MM/yyyy' }}</h5>
+          <span class="badge bg-secondary rounded-pill ms-2">{{ group[1].length }} {{ 'TaskManagement::TasksCount' | abpLocalization }}</span>
+        </div>
+        
+        <div class="d-flex flex-column gap-2">
+          <div *ngFor="let task of group[1]" class="d-flex justify-content-between align-items-start p-2 rounded border bg-white shadow-sm-hover transition-all"> 
+            <div>
+              <h6 class="fw-bold mb-1">{{ task.title }}</h6>
+              <div class="d-flex gap-3 small text-muted">
+                <span><i nz-icon nzType="clock-circle"></i> {{ 'TaskManagement::DueDate' | abpLocalization }}: {{ task.dueDate | date:'HH:mm' }}</span>
+                <span><i nz-icon nzType="project"></i> {{ task.assignedUserName }}</span>
+                <span class="fw-bold" [ngClass]="{ 'text-primary': task.status===0, 'text-warning': task.status===1, 'text-success': task.status===2 }">
+                  {{ ('TaskManagement::Enum:TaskStatus:' + (task.status === 0 ? 'New' : task.status === 1 ? 'InProgress' : 'Completed')) | abpLocalization }}
+                </span>
+              </div>
+            </div>
+            <button nz-button nzType="text" nzShape="circle" class="text-muted"><i nz-icon nzType="right"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <nz-empty *ngIf="listGroupedTasks.length === 0" nzNotFoundImage="simple" [nzNotFoundContent]="'TaskManagement::NoScheduleFound' | abpLocalization"></nz-empty>
+    </div>
+
+  </nz-spin>
+</div>
+
+<nz-modal [(nzVisible)]="isTaskModalVisible" [nzTitle]="'TaskManagement::ScheduleDetails' | abpLocalization" (nzOnCancel)="isTaskModalVisible = false" [nzFooter]="null" nzWidth="500px">
+  <ng-container *nzModalContent>
+    <div class="list-group list-group-flush">
+      <div *ngFor="let t of selectedGroupTasks" class="list-group-item px-0 py-3 border-bottom">
+        <h6 class="fw-bold text-primary mb-2 fs-6">{{ t.title }}</h6>
+        <div class="d-flex justify-content-between small text-muted mb-2">
+          <span><i nz-icon nzType="project" class="me-1"></i> {{ t.assignedUserName }}</span>
+          <span><i nz-icon nzType="clock-circle" class="me-1"></i> {{ t.dueDate | date:'HH:mm' }}</span>
+        </div>
+        <div class="d-flex align-items-center gap-2 mt-2">
+          <nz-tag [nzColor]="getStatusType(t.status)" class="rounded-pill fw-bold border-0 px-3">
+            {{ ('TaskManagement::Enum:TaskStatus:' + (t.status === 0 ? 'New' : t.status === 1 ? 'InProgress' : 'Completed')) | abpLocalization }}
+          </nz-tag>
+          <nz-tag nzColor="blue" class="rounded-pill fw-bold border-0 px-3">
+            {{ 'TaskManagement::Weight' | abpLocalization }}: {{ t.weight || 1 }}
+          </nz-tag>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</nz-modal>

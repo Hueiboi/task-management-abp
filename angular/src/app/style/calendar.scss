@@ -1,0 +1,106 @@
+.calendar-container {
+  .events {
+    .task-item {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 11px;
+    }
+  }
+
+  /* Định dạng lại Ant Design Tabs/Radio */
+  ::ng-deep .ant-radio-button-wrapper-checked {
+    background-color: #1890ff !important;
+    color: white !important;
+  }
+
+  /* ============================================================ */
+  /* CSS GRID TÙY CHỈNH CHO WEEK VIEW (Thay thế Tailwind)       */
+  /* ============================================================ */
+  .week-grid {
+    display: grid;
+    /* 1 cột cố định 60px cho giờ, 7 cột còn lại chia đều cho 7 ngày */
+    grid-template-columns: 60px repeat(7, minmax(100px, 1fr));
+  }
+
+  /* Chiều cao của mỗi dòng giờ */
+  .time-slot {
+    height: 45px; 
+  }
+
+  /* Hiệu ứng di chuột vào cột ngày */
+  .day-column {
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+  }
+
+  /* ============================================================ */
+  /* STYLE CHO CÁC KHỐI CÔNG VIỆC (TASKS) TRONG WEEK VIEW         */
+  /* ============================================================ */
+  .task-block {
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    z-index: 10;
+    
+    &:hover {
+      transform: scale(1.02);
+      z-index: 20;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+    }
+
+    .task-title {
+      font-size: 11px;
+      line-height: 1.2;
+    }
+    .task-subtitle {
+      font-size: 10px;
+      opacity: 0.85;
+    }
+  }
+
+  /* Định nghĩa màu sắc Semantic an toàn (Mới, Đang xử lý, Hoàn thành) */
+  .task-new {
+    background-color: #e6f7ff;
+    border-left-color: #1890ff !important;
+    color: #0050b3;
+  }
+  .task-inprogress {
+    background-color: #fff7e6;
+    border-left-color: #fa8c16 !important;
+    color: #ad4e00;
+  }
+  .task-completed {
+    background-color: #f6ffed;
+    border-left-color: #52c41a !important;
+    color: #237804;
+  }
+
+  /* Các class hỗ trợ */
+  .pointer-events-none { pointer-events: none; }
+  .pointer-events-auto { pointer-events: auto; }
+
+  /* Tùy chỉnh thanh cuộn cho Week View */
+  .overflow-auto {
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #d1d5db;
+      border-radius: 10px;
+    }
+  }
+}
+
+/* CSS Hiển thị đường kẻ đôi (double line) báo hiệu bị ngắt quãng giờ */
+.border-top-jump {
+  border-top: 3px double #d9d9d9 !important;
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.bg-group-card {
+  background-color: #f0f5ff !important;
+  border-left-color: #2f54eb !important;
+}

@@ -1,0 +1,21 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TaskManagement.Application.Contracts/TaskManagement.Application.Contracts.csproj" />
+    <Project Path="src/TaskManagement.Application/TaskManagement.Application.csproj" />
+    <Project Path="src/TaskManagement.AuthServer/TaskManagement.AuthServer.csproj" />
+    <Project Path="src/TaskManagement.DbMigrator/TaskManagement.DbMigrator.csproj" />
+    <Project Path="src/TaskManagement.Domain.Shared/TaskManagement.Domain.Shared.csproj" />
+    <Project Path="src/TaskManagement.Domain/TaskManagement.Domain.csproj" />
+    <Project Path="src/TaskManagement.EntityFrameworkCore/TaskManagement.EntityFrameworkCore.csproj" />
+    <Project Path="src/TaskManagement.HttpApi.Client/TaskManagement.HttpApi.Client.csproj" />
+    <Project Path="src/TaskManagement.HttpApi.Host/TaskManagement.HttpApi.Host.csproj" />
+    <Project Path="src/TaskManagement.HttpApi/TaskManagement.HttpApi.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/TaskManagement.Application.Tests/TaskManagement.Application.Tests.csproj" />
+    <Project Path="test/TaskManagement.Domain.Tests/TaskManagement.Domain.Tests.csproj" />
+    <Project Path="test/TaskManagement.EntityFrameworkCore.Tests/TaskManagement.EntityFrameworkCore.Tests.csproj" />
+    <Project Path="test/TaskManagement.HttpApi.Client.ConsoleTestApp/TaskManagement.HttpApi.Client.ConsoleTestApp.csproj" />
+    <Project Path="test/TaskManagement.TestBase/TaskManagement.TestBase.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,36 @@
+{
+  "Culture": "en",
+  "Texts": {
+    "Menu:Home": "Home",
+    "Welcome": "Welcome",
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information visit abp.io.",
+
+    "Menu:TaskManagement": "Task Management",
+    "Menu:Tasks": "Tasks",
+
+    "Permission:TaskManagement": "Task Management",
+    "Permission:Tasks": "Tasks Management",
+    "Permission:Tasks.Create": "Create Task",
+    "Permission:Tasks.Update": "Edit Task",
+    "Permission:Tasks.Delete": "Delete Task",
+
+    "Task": "Task",
+    "Status": "Status",
+    "AssignedTo": "Assigned To",
+    "Description": "Description",
+    "CreationTime": "Created At",
+
+    "Enum:TaskStatus.0": "New",
+    "Enum:TaskStatus.1": "In Progress",
+    "Enum:TaskStatus.2": "Completed",
+    "Enum:TaskStatus:New": "New",
+    "Enum:TaskStatus:InProgress": "In Progress",
+    "Enum:TaskStatus:Completed": "Completed",
+    "Menu:Projects": "Projects",
+    "TOTAL_TASKS": "TOTAL TASKS",
+    "IN_PROGRESS": "IN PROGRESS",
+    "OVERDUE_TASKS": "OVERDUE TASKS",
+    "PENDING_APPROVAL": "PENDING APPROVAL",
+    "Menu:Calendar": "Calendar"
+  }
+}

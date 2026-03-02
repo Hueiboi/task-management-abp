@@ -1,0 +1,488 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.HttpApi.Host\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.HttpApi.Host\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.HttpApi.Host\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.HttpApi.Host\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.HttpApi.Host\\TaskManagement.HttpApi.Host.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.HttpApi.Host\\TaskManagement.HttpApi.Host.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.DbMigrator\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.DbMigrator\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.DbMigrator\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.DbMigrator\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.HttpApi.Host\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.HttpApi.Host\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.DbMigrator\\TaskManagement.DbMigrator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.DbMigrator\\TaskManagement.DbMigrator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Domain\\TaskManagement.AuthServer\\TaskManagement.AuthServer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.Domain\\TaskManagement.AuthServer\\TaskManagement.AuthServer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Domain\\TaskManagement.AuthServer\\TaskManagementAuthServerModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.Domain\\TaskManagement.AuthServer\\TaskManagementAuthServerModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementEntityFrameworkCoreModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementEntityFrameworkCoreModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementEfCoreEntityExtensionMappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementEfCoreEntityExtensionMappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementDbContextFactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementDbContextFactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\environments\\environment.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:angular\\src\\environments\\environment.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\route.provider.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:angular\\src\\app\\route.provider.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\app.routes.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:angular\\src\\app\\app.routes.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\app.config.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:angular\\src\\app\\app.config.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\proxy\\tasks\\task.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:angular\\src\\app\\proxy\\tasks\\task.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\proxy\\controllers\\index.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:angular\\src\\app\\proxy\\controllers\\index.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\proxy\\controllers\\calendar.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:angular\\src\\app\\proxy\\controllers\\calendar.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\projects\\project.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:angular\\src\\app\\projects\\project.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\projects\\project.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:angular\\src\\app\\projects\\project.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:angular\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Application\\Tasks\\TaskAppService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.Application\\Tasks\\TaskAppService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Application\\Calendar\\CalendarAppService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.Application\\Calendar\\CalendarAppService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Domain\\Tasks\\ITaskItemRespitory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.Domain\\Tasks\\ITaskItemRespitory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Domain\\Tasks\\AppTask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aspnet-core\\src\\TaskManagement.Domain\\Tasks\\AppTask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 249,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.HttpApi.Host\\Program.cs",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.HttpApi.Host\\Program.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.HttpApi.Host\\Program.cs",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.HttpApi.Host\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T09:15:45.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.HttpApi.Host\\package.json",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.HttpApi.Host\\package.json",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.HttpApi.Host\\package.json",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.HttpApi.Host\\package.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-27T09:15:44.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.DbMigrator\\Program.cs",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.DbMigrator\\Program.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.DbMigrator\\Program.cs",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.DbMigrator\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T09:06:27.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TaskManagementDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementDbContext.cs",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementDbContext.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementDbContext.cs",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementDbContext.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAAwF0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T08:52:17.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.DbMigrator\\appsettings.json",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.DbMigrator\\appsettings.json",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.DbMigrator\\appsettings.json",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.DbMigrator\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAB5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-27T08:33:33.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TaskManagement.DbMigrator.csproj",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.DbMigrator\\TaskManagement.DbMigrator.csproj",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.DbMigrator\\TaskManagement.DbMigrator.csproj",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.DbMigrator\\TaskManagement.DbMigrator.csproj",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.DbMigrator\\TaskManagement.DbMigrator.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-27T08:33:05.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TaskManagement.AuthServer.csproj",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Domain\\TaskManagement.AuthServer\\TaskManagement.AuthServer.csproj",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.Domain\\TaskManagement.AuthServer\\TaskManagement.AuthServer.csproj",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Domain\\TaskManagement.AuthServer\\TaskManagement.AuthServer.csproj",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.Domain\\TaskManagement.AuthServer\\TaskManagement.AuthServer.csproj",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAwDsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-27T07:49:20.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskManagement.HttpApi.Host.csproj",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.HttpApi.Host\\TaskManagement.HttpApi.Host.csproj",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.HttpApi.Host\\TaskManagement.HttpApi.Host.csproj",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.HttpApi.Host\\TaskManagement.HttpApi.Host.csproj",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.HttpApi.Host\\TaskManagement.HttpApi.Host.csproj",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-27T07:42:32.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TaskManagementAuthServerModule.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Domain\\TaskManagement.AuthServer\\TaskManagementAuthServerModule.cs",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.Domain\\TaskManagement.AuthServer\\TaskManagementAuthServerModule.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Domain\\TaskManagement.AuthServer\\TaskManagementAuthServerModule.cs",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.Domain\\TaskManagement.AuthServer\\TaskManagementAuthServerModule.cs",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAYwNwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T07:40:52.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TaskManagementEntityFrameworkCoreModule.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementEntityFrameworkCoreModule.cs",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementEntityFrameworkCoreModule.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementEntityFrameworkCoreModule.cs",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementEntityFrameworkCoreModule.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADMAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T07:33:23.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TaskManagementEfCoreEntityExtensionMappings.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementEfCoreEntityExtensionMappings.cs",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementEfCoreEntityExtensionMappings.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementEfCoreEntityExtensionMappings.cs",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementEfCoreEntityExtensionMappings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T07:33:12.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TaskManagementDbContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementDbContextFactory.cs",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementDbContextFactory.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementDbContextFactory.cs",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.EntityFrameworkCore\\EntityFrameworkCore\\TaskManagementDbContextFactory.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T07:30:38.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.HttpApi.Host\\appsettings.json",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.HttpApi.Host\\appsettings.json",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.HttpApi.Host\\appsettings.json",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.HttpApi.Host\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-27T07:24:33.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "route.provider.ts",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\route.provider.ts",
+              "RelativeDocumentMoniker": "angular\\src\\app\\route.provider.ts",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\route.provider.ts",
+              "RelativeToolTip": "angular\\src\\app\\route.provider.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-02-27T07:21:31.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "app.routes.ts",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\app.routes.ts",
+              "RelativeDocumentMoniker": "angular\\src\\app\\app.routes.ts",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\app.routes.ts",
+              "RelativeToolTip": "angular\\src\\app\\app.routes.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-02-26T10:01:38.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "environment.ts",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\environments\\environment.ts",
+              "RelativeDocumentMoniker": "angular\\src\\environments\\environment.ts",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\environments\\environment.ts",
+              "RelativeToolTip": "angular\\src\\environments\\environment.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-02-26T09:07:06.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "app.config.ts",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\app.config.ts",
+              "RelativeDocumentMoniker": "angular\\src\\app\\app.config.ts",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\app.config.ts",
+              "RelativeToolTip": "angular\\src\\app\\app.config.ts",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-02-26T09:05:11.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "task.service.ts",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\proxy\\tasks\\task.service.ts",
+              "RelativeDocumentMoniker": "angular\\src\\app\\proxy\\tasks\\task.service.ts",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\proxy\\tasks\\task.service.ts",
+              "RelativeToolTip": "angular\\src\\app\\proxy\\tasks\\task.service.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-02-26T09:04:42.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "index.ts",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\proxy\\controllers\\index.ts",
+              "RelativeDocumentMoniker": "angular\\src\\app\\proxy\\controllers\\index.ts",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\proxy\\controllers\\index.ts",
+              "RelativeToolTip": "angular\\src\\app\\proxy\\controllers\\index.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-02-26T09:04:36.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "calendar.service.ts",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\proxy\\controllers\\calendar.service.ts",
+              "RelativeDocumentMoniker": "angular\\src\\app\\proxy\\controllers\\calendar.service.ts",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\proxy\\controllers\\calendar.service.ts",
+              "RelativeToolTip": "angular\\src\\app\\proxy\\controllers\\calendar.service.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-02-26T09:04:34.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "project.ts",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\projects\\project.ts",
+              "RelativeDocumentMoniker": "angular\\src\\app\\projects\\project.ts",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\projects\\project.ts",
+              "RelativeToolTip": "angular\\src\\app\\projects\\project.ts",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-02-26T09:04:09.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "project.html",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\projects\\project.html",
+              "RelativeDocumentMoniker": "angular\\src\\app\\projects\\project.html",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\src\\app\\projects\\project.html",
+              "RelativeToolTip": "angular\\src\\app\\projects\\project.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-02-26T09:03:57.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\package.json",
+              "RelativeDocumentMoniker": "angular\\package.json",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\angular\\package.json",
+              "RelativeToolTip": "angular\\package.json",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-26T09:03:19.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "TaskAppService.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Application\\Tasks\\TaskAppService.cs",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.Application\\Tasks\\TaskAppService.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Application\\Tasks\\TaskAppService.cs",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.Application\\Tasks\\TaskAppService.cs",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T08:38:20.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CalendarAppService.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Application\\Calendar\\CalendarAppService.cs",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.Application\\Calendar\\CalendarAppService.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Application\\Calendar\\CalendarAppService.cs",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.Application\\Calendar\\CalendarAppService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T08:37:47.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ITaskItemRespitory.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Domain\\Tasks\\ITaskItemRespitory.cs",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.Domain\\Tasks\\ITaskItemRespitory.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Domain\\Tasks\\ITaskItemRespitory.cs",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.Domain\\Tasks\\ITaskItemRespitory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T08:10:18.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AppTask.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Domain\\Tasks\\AppTask.cs",
+              "RelativeDocumentMoniker": "aspnet-core\\src\\TaskManagement.Domain\\Tasks\\AppTask.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\ABP 22\\aspnet-core\\src\\TaskManagement.Domain\\Tasks\\AppTask.cs",
+              "RelativeToolTip": "aspnet-core\\src\\TaskManagement.Domain\\Tasks\\AppTask.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T08:09:46.59Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

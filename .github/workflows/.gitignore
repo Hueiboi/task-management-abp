@@ -1,0 +1,44 @@
+# ======= Node.js / Angular =======
+# Ignore toàn bộ node_modules trong mọi thư mục
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.angular/
+.cache/
+dist/
+
+# ======= .NET / C# =======
+# Các thư mục biên dịch
+bin/
+obj/
+publish/
+
+# Các tệp cấu hình cá nhân và cache của Visual Studio
+.vs/
+.vscode/
+*.user
+*.userosscache
+*.sln.docstates
+.idea/
+*.suo
+
+# ======= Build & Cache =======
+# Ignore ccache và các thư mục tạm
+.ccache/
+ccache/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ======= Logs & OS =======
+*.log
+logs/
+.DS_Store
+Thumbs.db
+
+# ======= ABP Specific =======
+# Các tệp sinh ra khi chạy ứng dụng hoặc di chuyển DB
+*.db
+*.db-shm
+*.db-wal
