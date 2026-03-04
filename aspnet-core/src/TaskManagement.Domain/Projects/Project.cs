@@ -10,16 +10,11 @@ namespace TaskManagement.Projects
     {
         public string Name { get; set; } = default!;
         public string Description { get; set; }
-        
-        // Quản lý dự án (Bắt buộc)
-        public Guid ProjectManagerId { get; set; }
-        
-        // Tiến độ dự án (tính toán dựa trên Task hoàn thành)
-        public float Progress { get; set; }
-
-        // Danh sách thành viên tham gia dự án
+        public Guid ProjectManagerId { get; set; } 
+        public float Progress { get; set; } 
         public virtual ICollection<ProjectMember> Members { get; protected set; }
 
+        // NOTE: Constructor protected để chỉ có thể tạo mới thông qua Factory hoặc Repository, đảm bảo tính toàn vẹn của dữ liệu
         protected Project() { }
 
         public Project(Guid id, string name, Guid projectManagerId) : base(id)
@@ -30,7 +25,7 @@ namespace TaskManagement.Projects
         }
     }
 
-    // Thực thể phụ để lưu danh sách người tham gia
+    // NOTE: Thực thể phụ để lưu danh sách người tham gia
     public class ProjectMember : Entity
     {
         public Guid ProjectId { get; set; }

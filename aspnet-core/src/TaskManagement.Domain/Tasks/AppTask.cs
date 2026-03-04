@@ -1,4 +1,3 @@
-// aspnet-core\src\TaskManagement.Domain\Tasks\AppTask.cs
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,11 +16,13 @@ namespace TaskManagement.Tasks
         public bool IsRejected { get; set; }
         public string? DeletionReason { get; set; }
         
-        // Trọng số công việc 
+        // NOTE: Trọng số công việc 
         public int Weight { get; set; }
 
         public ICollection<TaskAssignment> Assignments { get; set; }
 
+        // NOTE: Protected constructor dành cho EF Core khi hydrate entity từ DB
+        // Public constructor đảm bảo invariant - không cho tạo task thiếu field bắt buộc
         protected AppTask() 
         {
             Assignments = new Collection<TaskAssignment>();

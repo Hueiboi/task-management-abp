@@ -15,8 +15,9 @@ public class TaskManagementApplicationAutoMapperProfile : Profile
         CreateMap<AppTask, TaskDto>();
         
         // Ánh xạ từ DTO sang Entity để lưu xuống Database
+        // Lấy dữ liệu từ FE không cần các trường như CreationTime, CreatorId -> ABP tự lo
         CreateMap<CreateUpdateTaskDto, AppTask>()
-            .IgnoreFullAuditedObjectProperties(); // Bỏ qua các trường như CreationTime, CreatorId
+            .IgnoreFullAuditedObjectProperties();
 
 
         /* --- 2. MAPPING CHO PROJECT (DỰ ÁN) --- */
@@ -25,8 +26,11 @@ public class TaskManagementApplicationAutoMapperProfile : Profile
         CreateMap<Project, ProjectDto>();
 
         // Ánh xạ từ DTO sang Entity Project
+        // Bỏ qua danh sách Member để xử lý thủ công
+        // `Members` là collection phức tạp, AutoMapper không biết cách map
+        // Code trong `UpdateAsync` đã xử lý thủ công `Clear()` + `Add()` rồi
         CreateMap<CreateUpdateProjectDto, Project>()
             .IgnoreFullAuditedObjectProperties()
-            .ForMember(dest => dest.Members, opt => opt.Ignore()); // Bỏ qua danh sách Member để xử lý thủ công
+            .ForMember(dest => dest.Members, opt => opt.Ignore()); 
     }
 }

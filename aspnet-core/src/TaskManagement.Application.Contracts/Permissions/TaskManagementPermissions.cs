@@ -22,7 +22,7 @@ public static class TaskManagementPermissions
         public const string Delete = Default + ".Delete";
         public const string UpdateStatus = Default + ".UpdateStatus";
         
-        // QUAN TRỌNG: Quyền phê duyệt đề xuất từ User
+        // NOTE: Quyền phê duyệt đề xuất từ User
         public const string Approve = Default + ".Approve"; 
         public const string Denied = Default + ".Denied"; 
     }

@@ -1,24 +1,29 @@
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Threading.Tasks; // NOTE: Thêm using System.Threading.Tasks để hỗ trợ async/await
 using Volo.Abp.Domain.Repositories;
 
 namespace TaskManagement.Tasks
 {
     public interface ITaskRepository : IRepository<AppTask, Guid>
     {
+        // NOTE: trả về 1 object task bất đồng bộ (async/await)
+        // Lấy task theo ID, trả về null nếu không tìm thấy
         Task<AppTask> GetTaskByIdAsync(Guid id);
-        
-        // Bổ sung tham số projectId và isApproved
+
+        // NOTE: Bổ sung tham số projectId và isApproved
+        // Lọc theo dự án
+        // Lọc trạng thái phê duyệt để phân biệt giữa task chính thức và đề xuất
+        // Trả về danh sách task bất đồng bộ với phân trang, sắp xếp và lọc nâng cao
         Task<List<AppTask>> GetListAsync(
             int skipCount,
             int maxResultCount,
             string sorting,
-            Guid? projectId = null, // Lọc theo dự án
+            Guid? projectId = null, 
             string? filter = null,
             TaskStatus? status = null,
             Guid? assignedUserId = null,
-            bool? isApproved = null // Lọc task chính thức hoặc đề xuất
+            bool? isApproved = null 
         );
 
         Task<long> GetTotalCountAsync(
@@ -29,7 +34,7 @@ namespace TaskManagement.Tasks
             bool? isApproved = null
         );
 
-        // Các hàm CRUD tùy chỉnh giữ nguyên
+        // NOTE: Các hàm CRUD tùy chỉnh giữ nguyên
         Task<AppTask> CreateTaskAsync(AppTask task);
         Task<AppTask> UpdateTaskAsync(AppTask task);
         Task DeleteTaskAsync(Guid id);
