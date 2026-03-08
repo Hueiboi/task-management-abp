@@ -24,6 +24,7 @@ import { CalendarService } from '../proxy/controllers/calendar.service'; // Chec
 import { TaskDto, TaskStatus } from '../proxy/tasks/models';
 import { ProjectService } from '../proxy/projects/project.service';
 
+// Interface nhóm lịch 
 interface CalendarEventGroup {
   isGroup: boolean;
   tasks: TaskDto[];
@@ -31,6 +32,7 @@ interface CalendarEventGroup {
   heightPx: number;
 }
 
+// Decorator
 @Component({
   selector: 'app-calendar',
   standalone: true,
@@ -44,15 +46,17 @@ interface CalendarEventGroup {
   ],
 })
 export class CalendarComponent implements OnInit {
-  private calendarService = inject(CalendarService);
+  private calendarService = inject(CalendarService); 
   private projectService = inject(ProjectService);
 
-  loading = false;
-  viewMode: 'month' | 'week' | 'list' = 'week'; 
-  
+  loading = false; // Trạng thái tải dữ liệu
+  viewMode: 'month' | 'week' | 'list' = 'week'; // Default xem theo tuần
+
+  // Ngày được chọn (mặc định là ngày hiện tại)
   selectedDate = new Date(); 
   currentWeekStart = this.getStartOfWeek(new Date()); 
-  
+
+  // Lọc và hiển thị
   searchTerm = '';
   allTasks: TaskDto[] = [];
   displayTasks: TaskDto[] = [];
@@ -61,9 +65,10 @@ export class CalendarComponent implements OnInit {
   selectedProjectIds: string[] = []; 
   
   PX_PER_HOUR = 45;
-  // MẢNG ĐỘNG CHỨA CÁC GIỜ SẼ HIỂN THỊ (Đã loại bỏ khung giờ rác)
+  // NOTE: mảng động chứa các giờ đã hiển thị(Đã loại bỏ khung giờ rác)
   activeHours: number[] = []; 
 
+  // Mảng ngày trong tuần hiện tại (7 ngày bắt đầu từ currentWeekStart)
   weekDaysList: Date[] = [];
   tasksByDayMap = new Map<string, CalendarEventGroup[]>();
   tasksForMonthMap = new Map<string, TaskDto[]>();
@@ -78,6 +83,8 @@ export class CalendarComponent implements OnInit {
     this.loadCalendarData();
   }
 
+
+  // Load danh sách dự án max 1000 để lọc
   loadProjects(): void {
     this.projectService.getList({ maxResultCount: 1000 }).subscribe(res => {
       this.projects = res.items;
@@ -86,11 +93,12 @@ export class CalendarComponent implements OnInit {
     });
   }
 
+  // Load dữ liệu lịch từ ngày bắt đầu đến ngày kết thúc
   loadCalendarData(): void {
     this.loading = true;
     const startDate = new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth() - 1, 1).toISOString();
     const endDate = new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth() + 2, 0).toISOString();
-
+    // Lấy task trong khoảng thời gian đảm bảo hiển thị đủ dữ liệu
     this.calendarService.getCalendarTasks(startDate, endDate).subscribe(res => {
       this.allTasks = res;
       this.applyFilter(); 
@@ -98,6 +106,7 @@ export class CalendarComponent implements OnInit {
     });
   }
 
+  // Áp dụng lọc cho project và search term
   applyFilter(): void {
     if (this.projects.length === 0) return;
 
@@ -111,6 +120,7 @@ export class CalendarComponent implements OnInit {
 
     this.buildDataMaps();
   }
+
 
   buildDataMaps() {
     this.tasksByDayMap.clear();
@@ -131,7 +141,9 @@ export class CalendarComponent implements OnInit {
 
     this.listGroupedTasks = Array.from(listMap.entries()).sort((a, b) => a[0].localeCompare(b[0]));
 
-    // BƯỚC 1: XÂY DỰNG MẢNG GIỜ ĐỘNG (Lọc các giờ có task trong tuần)
+    // VIỆC 1: Nhóm tasks theo ngày vào 2 Map
+    // tasksForMonthMap → dùng cho view tháng
+    // tasksByDayMap    → dùng cho view tuần (có tọa độ vị trí)
     this.weekDaysList.forEach(day => {
       const dateKey = this.formatDateKey(day);
       const tasksOnThisDay = this.tasksForMonthMap.get(dateKey) || [];
@@ -155,7 +167,10 @@ export class CalendarComponent implements OnInit {
       this.activeHours = Array.from(expandedHours).sort((a, b) => a - b);
     }
 
-    // BƯỚC 2: TÍNH TOẠ ĐỘ DỰA VÀO VỊ TRÍ TRONG MẢNG ACTIVE_HOURS
+    // VIỆC 2: Tính giờ hiển thị động (activeHours)
+    // Không hiển thị cố định 0-23h → chỉ hiển thị các giờ có task
+    // Thêm buffer 1h trước/sau để card không sát viền
+    // Tuần rỗng → mặc định giờ hành chính 8-17h
     this.weekDaysList.forEach(day => {
       const dateKey = this.formatDateKey(day);
       const tasksOnThisDay = this.tasksForMonthMap.get(dateKey) || [];
@@ -195,6 +210,7 @@ export class CalendarComponent implements OnInit {
     return { topPx, heightPx: this.PX_PER_HOUR }; 
   }
 
+  // Hàm lấy ngày bắt đầu tuần
   getStartOfWeek(date: Date): Date {
     const d = new Date(date);
     const day = d.getDay();
@@ -204,6 +220,7 @@ export class CalendarComponent implements OnInit {
     return d;
   }
 
+  // Hàm tạo mảng 7 ngày trong tuần dựa trên currentWeekStart
   generateWeekDays() {
     this.weekDaysList = Array.from({ length: 7 }).map((_, i) => {
       const d = new Date(this.currentWeekStart);
@@ -212,10 +229,12 @@ export class CalendarComponent implements OnInit {
     });
   }
 
+  // Hàm format và trả về ngày tháng theo định dạng chuẩn YYYY-MM-DD để làm key cho Map
   formatDateKey(d: Date): string {
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
   }
 
+  // Hàm điều hướng giữa các tuần
   navigateWeek(direction: 'prev' | 'next' | 'today'): void {
     if (direction === 'today') {
       this.currentWeekStart = this.getStartOfWeek(new Date());
@@ -228,19 +247,23 @@ export class CalendarComponent implements OnInit {
     this.buildDataMaps();
   }
 
+  // Lấy task cho từng tháng để hiển thị ở view month
   getTasksForMonth(date: Date): TaskDto[] {
     return this.tasksForMonthMap.get(this.formatDateKey(date)) || [];
   }
 
+  // Lấy nhóm task cho từng ngày hiển thị ở view week
   getGroupsForWeekDay(date: Date): CalendarEventGroup[] {
     return this.tasksByDayMap.get(this.formatDateKey(date)) || [];
   }
 
+  // Modal hiển thị danh sách nhóm task
   openGroupModal(group: CalendarEventGroup) {
     this.selectedGroupTasks = group.tasks;
     this.isTaskModalVisible = true;
   }
 
+  // Hàm lấy màu sắc tương ứng với trạng thái task
   getStatusType(status: TaskStatus): string {
     switch (status) {
       case TaskStatus.New: return 'processing';

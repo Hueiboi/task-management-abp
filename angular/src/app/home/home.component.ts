@@ -11,12 +11,14 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, CoreModule]
 })
 export class HomeComponent {
-  private authService = inject(AuthService);
+  private authService = inject(AuthService); // inject authService
 
+  // Kiểm tra đăng nhập của người dùng 
   get hasLoggedIn(): boolean {
     return this.authService.isAuthenticated;
   }
 
+  // Chuyển trang sang đăng nhập
   login() {
     this.authService.navigateToLogin();
   }
