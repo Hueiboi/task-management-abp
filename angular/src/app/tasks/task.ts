@@ -423,5 +423,6 @@ export class TaskComponent implements OnInit {
     return `Enum:TaskStatus:${(TaskStatus as any)[status as number]}`;
   }
 
+  // Helper lấy text đã localization theo key, sử dụng trong component để hiển thị text đa ngôn ngữ
   private l(key: string): string { return this.localizationService.instant(key); }
 }

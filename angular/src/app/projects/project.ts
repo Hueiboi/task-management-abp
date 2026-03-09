@@ -29,7 +29,7 @@ import { TaskService } from '../proxy/tasks/task.service';
   selector: 'app-project',
   standalone: true,
   templateUrl: './project.html',
-  styleUrls: ['../style/global.scss'],
+  styleUrls: ['./project.scss'],
   providers: [ListService],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule, CoreModule, ThemeSharedModule,
@@ -208,4 +208,11 @@ export class ProjectComponent implements OnInit, OnDestroy {
   handleCancel(): void { this.isModalOpen = false; }
 
   private l(key: string): string { return this.localizationService.instant(key); }
+
+  getProgressColor(progress: number): string {
+    if (progress === 100) return '#6b7280';
+    if (progress >= 60) return '#7c3aed';
+    if (progress >= 30) return '#a78bfa';
+    return '#ddd6fe';
+  }
 }

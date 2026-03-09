@@ -1,136 +1,190 @@
-<div class="p-4 bg-white min-vh-100">
+<div class="projects-page">
+
+  <!-- ===== HEADER ===== -->
   <div class="d-flex justify-content-between align-items-center mb-4">
-    <h3 class="text-black fw-bold mb-0">
-      <i nz-icon nzType="project" class="text-primary me-2"></i> 
+    <h3 class="page-title mb-0">
       {{ 'TaskManagement::Menu:Projects' | abpLocalization }}
     </h3>
-    
-    <div class="d-flex gap-3 align-items-center">
-      <nz-input-group [nzPrefix]="prefixIconSearch" [nzSuffix]="sortIcon" style="width: 350px">
-        <input type="text" nz-input [(ngModel)]="filterText" (input)="loadProjects()" 
+
+    <div class="d-flex gap-2 align-items-center">
+      <nz-input-group [nzPrefix]="prefixIconSearch" [nzSuffix]="sortIcon" style="width: 300px">
+        <input type="text" nz-input
+               [(ngModel)]="filterText"
+               (input)="loadProjects()"
                [placeholder]="'TaskManagement::ProjectName' | abpLocalization" />
       </nz-input-group>
-      
-      <ng-template #prefixIconSearch><i nz-icon nzType="search"></i></ng-template>
+
+      <ng-template #prefixIconSearch>
+        <i nz-icon nzType="search" style="color: #9ca3af;"></i>
+      </ng-template>
       <ng-template #sortIcon>
-        <i nz-icon [nzType]="isCreationSortDesc ? 'sort-descending' : 'sort-ascending'" 
-           class="text-primary cursor-pointer" (click)="toggleCreationSort()"
-           nz-tooltip [nzTooltipTitle]="isCreationSortDesc ? ('TaskManagement::SortNewest' | abpLocalization) : ('TaskManagement::SortOldest' | abpLocalization)">
+        <i nz-icon
+           [nzType]="isCreationSortDesc ? 'sort-descending' : 'sort-ascending'"
+           class="sort-icon"
+           (click)="toggleCreationSort()"
+           nz-tooltip
+           [nzTooltipTitle]="isCreationSortDesc
+            ? ('TaskManagement::SortNewest' | abpLocalization)
+            : ('TaskManagement::SortOldest' | abpLocalization)">
         </i>
       </ng-template>
 
-      <button *ngIf="permission.getGrantedPolicy('TaskManagement.Projects.Create')" 
-              nz-button nzType="primary" (click)="createProject()" class="rounded-pill px-4 shadow-sm">
-        <i nz-icon nzType="plus"></i> {{ 'TaskManagement::NewProject' | abpLocalization }}
+      <button *ngIf="permission.getGrantedPolicy('TaskManagement.Projects.Create')"
+              nz-button nzType="primary"
+              class="btn-new-project"
+              (click)="createProject()">
+        <i nz-icon nzType="plus"></i>
+        {{ 'TaskManagement::NewProject' | abpLocalization }}
       </button>
     </div>
   </div>
 
+  <!-- ===== GRID ===== -->
   <nz-spin [nzSpinning]="loading">
     <div class="row g-4">
+
+      <div *ngIf="projectData.items?.length === 0" class="col-12">
+        <nz-empty style="padding: 60px 0;"></nz-empty>
+      </div>
+
       <div class="col-md-4" *ngFor="let item of projectData.items">
-        <nz-card class="project-card border shadow-sm rounded-16 overflow-hidden position-relative transition-all" 
-                 (click)="openTasks(item.id)" [nzBodyStyle]="{ padding: '20px' }">
-          
-          <div *ngIf="item.progress === 100" class="position-absolute" style="top: 15px; right: 15px; z-index: 2;">
-            <i nz-icon nzType="check-circle" nzTheme="fill" class="text-success fs-4"></i>
+        <nz-card class="project-card"
+                 [nzBodyStyle]="{ padding: '20px' }"
+                 (click)="openTasks(item.id)">
+
+          <!-- Header: tên + actions -->
+          <div class="d-flex justify-content-between align-items-start mb-1">
+            <h5 class="project-name mb-0">{{ item.name }}</h5>
+            <div class="card-actions d-flex gap-1" (click)="$event.stopPropagation()">
+              <button *ngIf="canEditProject(item)"
+                      nz-button nzType="text" nzShape="circle"
+                      (click)="editProject($event, item)"
+                      nz-tooltip [nzTooltipTitle]="'TaskManagement::Edit' | abpLocalization">
+                <i nz-icon nzType="edit" class="action-icon"></i>
+              </button>
+              <button *ngIf="permission.getGrantedPolicy('TaskManagement.Projects.Delete')"
+                      nz-button nzType="text" nzShape="circle"
+                      (click)="deleteProject($event, item.id)"
+                      nz-tooltip [nzTooltipTitle]="'TaskManagement::Delete' | abpLocalization">
+                <i nz-icon nzType="delete" class="action-icon danger"></i>
+              </button>
+            </div>
           </div>
 
-          <div class="mb-2">
-            <h5 class="text-black fw-bold mb-1">{{ item.name }}</h5>
-            <p class="text-muted small text-truncate mb-3">{{ item.description || ('TaskManagement::NoDescription' | abpLocalization) }}</p>
-          </div>
-          
+          <!-- Description -->
+          <p class="project-desc">
+            {{ item.description || ('TaskManagement::NoDescription' | abpLocalization) }}
+          </p>
+
+          <!-- Progress -->
           <div class="progress-section mb-3">
             <div class="d-flex justify-content-between align-items-center mb-1">
-              <span class="text-black x-small fw-bold">{{ 'TaskManagement::Progress' | abpLocalization }}</span>
-              <span class="text-primary fw-bold small">{{ item.progress | number:'1.0-0' }}%</span>
+              <span class="progress-label-text">
+                {{ 'TaskManagement::Progress' | abpLocalization }}
+              </span>
+              <span class="progress-percent">{{ item.progress | number:'1.0-0' }}%</span>
             </div>
-            <nz-progress [nzPercent]="item.progress" [nzShowInfo]="false" nzStatus="active" [nzStrokeWidth]="8" 
-                         [nzStrokeColor]="{ '0%': '#1890ff', '100%': '#52c41a' }">
+            <nz-progress [nzPercent]="item.progress"
+                         [nzShowInfo]="false"
+                         [nzStrokeWidth]="6"
+                         [nzStrokeColor]="getProgressColor(item.progress)">
             </nz-progress>
           </div>
 
-          <div class="d-flex gap-4 mb-3">
-            <div class="d-flex align-items-center gap-1">
-              <i nz-icon nzType="check-circle" class="text-success fs-5"></i>
-              <span class="text-black small fw-bold">{{ item.taskCount || 0 }}</span>
+          <!-- Stats -->
+          <div class="d-flex gap-3 mb-3">
+            <div class="stat-chip">
+              <i nz-icon nzType="check-square" class="stat-icon success"></i>
+              <span>{{ item.taskCount || 0 }} tasks</span>
             </div>
-            <div class="d-flex align-items-center gap-1">
-              <i nz-icon nzType="team" class="text-info fs-5"></i>
-              <span class="text-black small fw-bold">{{ item.memberCount || 0 }}</span>
+            <div class="stat-chip">
+              <i nz-icon nzType="team" class="stat-icon info"></i>
+              <span>{{ item.memberCount || 0 }} members</span>
             </div>
           </div>
 
-          <hr class="my-3 opacity-25">
+          <hr class="card-divider">
 
-          <div class="d-flex justify-content-between align-items-center mt-auto">
-            <div class="d-flex align-items-center">
-              <nz-avatar nzSize="small" [nzText]="item.projectManagerName?.[0]" class="bg-primary me-2"></nz-avatar>
+          <!-- Footer: PM + date + done badge -->
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-2">
+              <nz-avatar nzSize="small"
+                         [nzText]="item.projectManagerName?.[0]?.toUpperCase()"
+                         [nzStyle]="{ 'background-color': '#7c3aed' }">
+              </nz-avatar>
               <div class="d-flex flex-column">
-                <span class="text-black x-small fw-bold">{{ item.projectManagerName }}</span>
-                <span class="text-muted x-small" style="font-size: 0.6rem !important;">{{ item.creationTime | date:'dd/MM/yyyy' }}</span>
+                <span class="pm-name">{{ item.projectManagerName }}</span>
+                <span class="creation-date">{{ item.creationTime | date:'dd/MM/yyyy' }}</span>
               </div>
             </div>
-
-            <div class="project-footer-actions d-flex gap-1">
-              <button *ngIf="canEditProject(item)" 
-                      nz-button nzType="text" nzShape="circle" (click)="editProject($event, item)" 
-                      nz-tooltip [nzTooltipTitle]="'TaskManagement::Edit' | abpLocalization">
-                <i nz-icon nzType="edit" class="text-primary fs-5"></i>
-              </button>
-              
-              <button *ngIf="permission.getGrantedPolicy('TaskManagement.Projects.Delete')" 
-                      nz-button nzType="text" nzShape="circle" (click)="deleteProject($event, item.id)" 
-                      nz-tooltip [nzTooltipTitle]="'TaskManagement::Delete' | abpLocalization">
-                <i nz-icon nzType="delete" class="text-danger fs-5"></i>
-              </button>
-            </div>
+            <span *ngIf="item.progress === 100" class="completed-badge">
+              <i nz-icon nzType="check-circle" nzTheme="fill"></i> Done
+            </span>
           </div>
+
         </nz-card>
       </div>
     </div>
   </nz-spin>
 </div>
 
-<nz-drawer [nzVisible]="isModalOpen" [nzTitle]="drawerTitle" [nzWidth]="450" nzPlacement="right" (nzOnClose)="handleCancel()" [nzFooter]="drawerFooter">
+<!-- ===== DRAWER ===== -->
+<nz-drawer [nzVisible]="isModalOpen"
+           [nzTitle]="drawerTitle"
+           [nzWidth]="450"
+           nzPlacement="right"
+           (nzOnClose)="handleCancel()"
+           [nzFooter]="drawerFooter">
+
   <ng-template #drawerTitle>
-    <span class="fw-bold text-black"><i nz-icon nzType="form" class="text-primary me-2"></i> 
+    <span class="fw-bold">
+      <i nz-icon nzType="form" style="color: #7c3aed; margin-right: 8px;"></i>
       {{ (isEditMode ? ('TaskManagement::Update' | abpLocalization) : ('TaskManagement::Create' | abpLocalization)) }}
     </span>
   </ng-template>
+
   <ng-container *nzDrawerContent>
     <form nz-form [formGroup]="form" nzLayout="vertical">
-      <nz-form-item class="mb-3">
+      <nz-form-item>
         <nz-form-label nzRequired>{{ 'TaskManagement::ProjectName' | abpLocalization }}</nz-form-label>
-        <nz-form-control><input nz-input formControlName="name" /></nz-form-control>
+        <nz-form-control>
+          <input nz-input formControlName="name" />
+        </nz-form-control>
       </nz-form-item>
-      <nz-form-item class="mb-3">
+      <nz-form-item>
         <nz-form-label>{{ 'TaskManagement::Description' | abpLocalization }}</nz-form-label>
-        <nz-form-control><textarea nz-input formControlName="description" rows="3"></textarea></nz-form-control>
+        <nz-form-control>
+          <textarea nz-input formControlName="description" rows="3"></textarea>
+        </nz-form-control>
       </nz-form-item>
-      <nz-form-item class="mb-3">
+      <nz-form-item>
         <nz-form-label nzRequired>{{ 'TaskManagement::ProjectManager' | abpLocalization }}</nz-form-label>
         <nz-form-control>
-          <nz-select formControlName="projectManagerId" nzShowSearch [nzPlaceHolder]="'TaskManagement::SelectManager' | abpLocalization">
+          <nz-select formControlName="projectManagerId" nzShowSearch
+                     [nzPlaceHolder]="'TaskManagement::SelectManager' | abpLocalization">
             <nz-option *ngFor="let u of projectManagers" [nzLabel]="u.userName" [nzValue]="u.id"></nz-option>
           </nz-select>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item class="mb-3">
+      <nz-form-item>
         <nz-form-label>{{ 'TaskManagement::Members' | abpLocalization }}</nz-form-label>
         <nz-form-control>
-          <nz-select formControlName="memberIds" nzMode="multiple" nzShowSearch [nzPlaceHolder]="'TaskManagement::SelectUser' | abpLocalization">
+          <nz-select formControlName="memberIds" nzMode="multiple" nzShowSearch
+                     [nzPlaceHolder]="'TaskManagement::SelectUser' | abpLocalization">
             <nz-option *ngFor="let u of users" [nzLabel]="u.userName" [nzValue]="u.id"></nz-option>
           </nz-select>
         </nz-form-control>
       </nz-form-item>
     </form>
   </ng-container>
+
   <ng-template #drawerFooter>
     <div class="text-end py-2">
-      <button nz-button (click)="handleCancel()" class="me-2 rounded-pill px-4">{{ 'TaskManagement::Cancel' | abpLocalization }}</button>
-      <button nz-button nzType="primary" (click)="save()" [nzLoading]="saving" class="rounded-pill px-4 shadow-sm">
+      <button nz-button (click)="handleCancel()" class="me-2">
+        {{ 'TaskManagement::Cancel' | abpLocalization }}
+      </button>
+      <button nz-button nzType="primary" class="btn-new-project"
+              (click)="save()" [nzLoading]="saving">
         {{ 'TaskManagement::Save' | abpLocalization }}
       </button>
     </div>
