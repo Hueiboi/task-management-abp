@@ -1,103 +1,112 @@
-<div class="landing-page-v2">
-  <nav class="lp-navbar d-flex justify-content-between align-items-center px-lg-5 px-3 py-3 shadow-sm sticky-top bg-white">
-    <div class="lp-brand d-flex align-items-center gap-2">
-      <div class="logo-icon bg-primary rounded-12 p-2 shadow-blue-sm">
-        <i class="fas fa-layer-group text-white fs-5"></i>
+<div class="home-page">
+
+  <!-- NAVBAR -->
+  <nav class="home-navbar">
+    <div class="navbar-brand">
+      <div class="brand-icon">
+        <i class="fas fa-layer-group"></i>
       </div>
-      <span class="fs-4 fw-bolder text-dark tracking-tighter">Task Management</span>
+      <span class="brand-name">Task Management</span>
     </div>
-    
-    <div class="lp-nav-actions">
+
+    <div class="navbar-actions">
       @if (!hasLoggedIn) {
-        <button (click)="login()" class="btn btn-primary rounded-pill px-4 py-2 fw-bold shadow-blue hover-scale">
-          <i class="fas fa-sign-in-alt me-2"></i>
-          {{ 'AbpAccount::Login' | abpLocalization }}
-        </button>
+      <button (click)="login()" class="btn-login">
+        <i class="fas fa-sign-in-alt me-2"></i>
+        {{ 'AbpAccount::Login' | abpLocalization }}
+      </button>
       } @else {
-        <a routerLink="/projects" class="btn btn-outline-primary rounded-pill px-4 py-2 fw-bold hover-scale">
-          {{ 'TaskManagement::GoToDashboard' | abpLocalization }}
-          <i class="fas fa-chevron-right ms-2 small"></i>
-        </a>
+      <a routerLink="/projects" class="btn-dashboard">
+        {{ 'TaskManagement::GoToDashboard' | abpLocalization }}
+        <i class="fas fa-chevron-right ms-2"></i>
+      </a>
       }
     </div>
   </nav>
 
-  <section class="lp-hero py-lg-5 py-4 px-3 overflow-hidden position-relative">
-    <div class="container py-5 text-center position-relative" style="z-index: 2;">
-      <div class="badge-new mb-4 d-inline-block p-1 pe-3 rounded-pill bg-soft-primary border border-primary-subtle">
-        <span class="badge bg-primary rounded-pill me-2 px-3">{{ 'TaskManagement::NEW' | abpLocalization }}</span>
-        <span class="text-primary small fw-bold">{{ 'TaskManagement::New Feature Announce' | abpLocalization }}</span>
+  <!-- HERO -->
+  <section class="home-hero">
+    <div class="hero-bg-blob blob-1"></div>
+    <div class="hero-bg-blob blob-2"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot">{{ 'TaskManagement::NEW' | abpLocalization }}</span>
+        <span class="badge-text">{{ 'TaskManagement::New Feature Announce' | abpLocalization }}</span>
       </div>
 
-      <h1 class="hero-title display-2 fw-black text-dark mb-4 tracking-tighter">
+      <h1 class="hero-title">
         {{ 'TaskManagement::Welcome' | abpLocalization }}
-        <span class="text-gradient d-block">{{ 'TaskManagement::Welcome to our Platform' | abpLocalization }}</span>
+        <span class="hero-title-accent">{{ 'TaskManagement::Welcome to our Platform' | abpLocalization }}</span>
       </h1>
 
-      <p class="hero-desc lead text-muted mb-5 mx-auto fs-4 line-height-lg" style="max-width: 750px;">
+      <p class="hero-desc">
         {{ 'TaskManagement::WelcomeDescription' | abpLocalization }}
       </p>
 
-      <div class="hero-buttons d-flex justify-content-center gap-3">
+      <div class="hero-actions">
         @if (!hasLoggedIn) {
-          <button (click)="login()" class="btn btn-primary btn-hero rounded-pill px-5 py-3 fs-5 shadow-blue hover-up">
-            {{ 'TaskManagement::Get Started For Free' | abpLocalization }}
-            <i class="fas fa-bolt ms-2 text-warning"></i>
-          </button>
+        <button (click)="login()" class="btn-hero-primary">
+          {{ 'TaskManagement::Get Started For Free' | abpLocalization }}
+          <i class="fas fa-bolt ms-2"></i>
+        </button>
         } @else {
-          <a routerLink="/projects" class="btn btn-primary btn-hero rounded-pill px-5 py-3 fs-5 shadow-blue hover-up">
-            {{ 'TaskManagement::Continue to Work' | abpLocalization }}
-          </a>
+        <a routerLink="/projects" class="btn-hero-primary">
+          {{ 'TaskManagement::Continue to Work' | abpLocalization }}
+          <i class="fas fa-arrow-right ms-2"></i>
+        </a>
         }
       </div>
 
-      <div class="app-mockup mt-5 pt-4 position-relative mx-auto" style="max-width: 1000px;">
-        <div class="window-frame shadow-2xl rounded-24 bg-white border border-light overflow-hidden">
-          <div class="window-bar d-flex gap-2 p-3 bg-light border-bottom">
-            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-            <div class="ms-auto small text-muted fw-medium pe-2">localhost:4200/projects</div>
+      <!-- App Mockup -->
+      <div class="mockup-wrap">
+        <div class="mockup-window">
+          <div class="mockup-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="mockup-url">localhost:4200/projects</span>
           </div>
-          <img src="https://sitechecker.pro/wp-content/uploads/2023/05/Dashboard-Meaning.png" 
-               class="img-fluid mockup-img" 
-               alt="Dashboard Preview">
+          <img src="https://sitechecker.pro/wp-content/uploads/2023/05/Dashboard-Meaning.png"
+               class="mockup-img"
+               alt="Dashboard Preview" />
         </div>
-        
-        <div class="floating-card c1 p-3 rounded-16 bg-white shadow-lg border animate-float">
+
+        <div class="floating-chip chip-1">
           <i class="fas fa-check-circle text-success me-2"></i>
-          <span class="small fw-bold">{{ 'TaskManagement::FeatureStats1' | abpLocalization }}</span>
+          <span>{{ 'TaskManagement::FeatureStats1' | abpLocalization }}</span>
         </div>
-        <div class="floating-card c2 p-3 rounded-16 bg-white shadow-lg border animate-float-delayed">
-          <i class="fas fa-users text-info me-2"></i>
-          <span class="small fw-bold">{{ 'TaskManagement::FeatureStats2' | abpLocalization }}</span>
+        <div class="floating-chip chip-2">
+          <i class="fas fa-users me-2" style="color: #3b82f6;"></i>
+          <span>{{ 'TaskManagement::FeatureStats2' | abpLocalization }}</span>
         </div>
       </div>
     </div>
-    
-    <div class="hero-blob bg-primary opacity-5"></div>
   </section>
 
-  <section class="lp-features py-5 bg-white">
-    <div class="container py-5">
-      <div class="section-header text-center mb-5">
-        <h2 class="fw-bold text-dark mb-3 fs-1">{{ 'TaskManagement::CoreFeaturesTitle' | abpLocalization }}</h2>
-        <div class="divider-primary mx-auto mb-4"></div>
+  <!-- FEATURES -->
+  <section class="home-features">
+    <div class="features-inner">
+      <div class="features-header">
+        <h2 class="features-title">{{ 'TaskManagement::CoreFeaturesTitle' | abpLocalization }}</h2>
+        <div class="features-divider"></div>
       </div>
-      
-      <div class="row g-4">
-        <div class="col-lg-4" *ngFor="let feat of [
-          {key: 'F1', icon: 'fa-project-diagram', color: 'blue', bg: 'bg-soft-primary'},
-          {key: 'F2', icon: 'fa-chart-line', color: 'green', bg: 'bg-soft-success'},
-          {key: 'F3', icon: 'fa-shield-alt', color: 'purple', bg: 'bg-soft-purple'}
+
+      <div class="features-grid">
+        <div class="feature-card" *ngFor="let feat of [
+          {key: 'F1', icon: 'fa-project-diagram', color: '#7c3aed', bg: '#f5f3ff'},
+          {key: 'F2', icon: 'fa-chart-line',       color: '#22c55e', bg: '#f0fdf4'},
+          {key: 'F3', icon: 'fa-shield-alt',        color: '#3b82f6', bg: '#eff6ff'}
         ]">
-          <div class="feature-card-v2 p-5 rounded-24 h-100 transition-300 border">
-            <div class="icon-wrap mb-4 rounded-16" [class]="feat.bg">
-              <i class="fas" [class]="feat.icon + ' text-' + feat.color + ' fs-2'"></i>
-            </div>
-            <h4 class="fw-bold text-dark mb-3">{{ ('TaskManagement::' + feat.key + '_Title') | abpLocalization }}</h4>
-            <p class="text-muted fs-5 mb-0">{{ ('TaskManagement::' + feat.key + '_Desc') | abpLocalization }}</p>
+          <div class="feature-icon-wrap" [style.background]="feat.bg">
+            <i class="fas" [class]="feat.icon" [style.color]="feat.color"></i>
           </div>
+          <h4 class="feature-name">{{ ('TaskManagement::' + feat.key + '_Title') | abpLocalization }}</h4>
+          <p class="feature-desc">{{ ('TaskManagement::' + feat.key + '_Desc') | abpLocalization }}</p>
         </div>
       </div>
     </div>
   </section>
+
 </div>
+

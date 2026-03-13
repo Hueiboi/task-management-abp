@@ -145,7 +145,7 @@ public class ProjectAppService : ApplicationService, IProjectAppService
     // Hàm lấy danh sách Project Manager để hiển thị dropdown khi tạo/sửa dự án
     public async Task<ListResultDto<UserLookupDto>> GetProjectManagersLookupAsync()
     {
-        var pmUsers = await _userManager.GetUsersInRoleAsync("Project manager");
+        var pmUsers = await _userManager.GetUsersInRoleAsync("ProjectManager");
         return new ListResultDto<UserLookupDto>(
             pmUsers.Select(u => new UserLookupDto { Id = u.Id, UserName = u.UserName }).ToList()
         );

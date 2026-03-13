@@ -7,6 +7,15 @@
     "Get Started For Free": "Get Started For Free",
     "NEW": "NEW",
     "New Feature Announce": "New Feature Announcement",
+    "CoreFeaturesTitle": "Core Features",
+    "F1_Title": "Project Management",
+    "F1_Desc": "Create and track projects with progress, deadlines, and assigned teams in one place.",
+
+    "F2_Title": "Task Approval Flow",
+    "F2_Desc": "Members propose tasks, managers review and approve — structured workflow built in.",
+
+    "F3_Title": "Role-based Access",
+    "F3_Desc": "Admins, Project Managers, and Members each see only what they need to act on.",
     "Welcome": "Welcome",
     "Menu:TaskManagement": "Project Management",
     "Menu:Projects": "Projects",

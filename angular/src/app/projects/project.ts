@@ -29,7 +29,7 @@ import { TaskService } from '../proxy/tasks/task.service';
   selector: 'app-project',
   standalone: true,
   templateUrl: './project.html',
-  styleUrls: ['./project.scss'],
+  styleUrls: ['../style/project.scss'],
   providers: [ListService],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule, CoreModule, ThemeSharedModule,

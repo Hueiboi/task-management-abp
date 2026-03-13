@@ -7,6 +7,15 @@
     "Get Started For Free": "Bắt đầu miễn phí",
     "NEW": "MỚI",
     "New Feature Announce": "Thông báo tính năng mới",
+    "CoreFeaturesTitle": "Các tính năng cốt lõi",
+    "F1_Title": "Quản lý dự án",
+    "F1_Desc": "Tạo và theo dõi dự án với tiến độ, thời hạn và nhóm được phân công tại một nơi.",
+
+    "F2_Title": "Quy trình phê duyệt nhiệm vụ",
+    "F2_Desc": "Thành viên đề xuất nhiệm vụ, người quản lý xem xét và phê duyệt — quy trình làm việc có cấu trúc được tích hợp sẵn.",
+
+    "F3_Title": "Quyền truy cập dựa trên vai trò",
+    "F3_Desc": "Quản trị viên, người quản lý dự án và thành viên chỉ thấy những gì họ cần để thực hiện.",
     "Welcome": "Xin chào",
     "Menu:TaskManagement": "Quản lý dự án",
     "Menu:Projects": "Dự án",
@@ -22,7 +31,7 @@
     "Permission:Projects.Delete": "Xóa dự án",
     "TaskManagement::Task Already Exists With Same Details": "Đã tồn tại công việc tương tự trong dự án",
     "Task Already Exists": "Đã tồn tại công việc tương tự trong dự án",
-    
+
     "Permission:Tasks": "Quản lý công việc",
     "Permission:Tasks.Create": "Tạo mới công việc",
     "Permission:Tasks.Update": "Cập nhật công việc",
@@ -74,7 +83,7 @@
     "Update": "Cập nhật",
     "Save": "Lưu lại",
     "Cancel": "Hủy bỏ",
-    
+
     "AreYouSureToDelete": "Bạn có chắc chắn muốn xóa không?",
     "TOTAL TASKS": "TỔNG SỐ CÔNG VIỆC",
     "IN PROGRESS": "ĐANG XỬ LÝ",

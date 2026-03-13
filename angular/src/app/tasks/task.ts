@@ -34,7 +34,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   selector: 'app-task',
   standalone: true, // Không cần ngModule riêng, có thể sử dụng trực tiếp
   templateUrl: './task.html', // Template riêng cho component này
-  styleUrls: ['../style/global.scss'],
+  styleUrls: ['../style/task.scss'],
   providers: [ListService], // Serivce tự xử lý pagination, sorting, filtering
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule, CoreModule, ThemeSharedModule,
