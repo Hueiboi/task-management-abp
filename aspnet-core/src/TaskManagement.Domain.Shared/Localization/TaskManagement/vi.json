@@ -121,6 +121,15 @@
     "Month": "Tháng",
     "Week": "Tuần",
     "List": "Danh sách công việc",
-    "Projects": "Danh sách dự án"
+    "Projects": "Danh sách dự án",
+
+    "NoDescription": "Không có mô tả được cung cấp.",
+    "NoPermissionToEditProject": "Bạn không có quyền để chỉnh sửa dự án này",
+    "SortNewest": "Mới nhất đầu tiên",
+    "SortOldest": "Cũ nhất đầu tiên",
+    "Edit": "Chỉnh sửa",
+    "Delete": "Xoá",
+
+    "SearchPlaceholder": "Tìm kiếm theo tên dự án hoặc công việc..."
   }
 }
